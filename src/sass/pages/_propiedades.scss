@@ -1,0 +1,68 @@
+.section-propiedades {
+    @include customWidth(850px) {
+        display: grid;
+        grid-template-columns: 1fr 1fr 1fr;
+        gap: 2rem;
+    }
+
+    .card {
+        background-color: $greyLighter;
+        border: solid 1px $greyLight;
+        margin-bottom: 2rem;
+        display: flex;
+        flex-direction: column;
+        @include customWidth(850px) {
+            margin-bottom: 0;
+        }
+
+        .card-info {
+            padding: 2rem;
+            height: 100%;
+            display: flex;
+            flex-direction: column;
+            .card-bottom {
+                margin-top: auto;
+            }
+        }
+
+        h3 {
+            margin: 0;
+        }
+    }
+}
+.button-ver-todas {
+    float:  right;
+}
+.card-price {
+    font-weight: $bold;
+    color: $green;
+    font-size: 3rem;
+    margin: 0;
+}
+.card-icons {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    gap: 1rem;
+
+    .card-icon {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        gap: 1rem;
+
+        img {
+            width: 4rem;
+            height: 4rem;
+        }
+        p {
+            font-weight: $bold;
+        }
+    }
+}
+.card-icons-page {
+    margin: 0 auto;
+    @include phone {
+        margin: 0;
+        width: 50%;
+    }
+}

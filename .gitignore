@@ -1,0 +1,9 @@
+node_modules/
+package-lock.json
+composer.lock
+
+deploy/
+pendientes/
+
+src/img/
+src/svg/

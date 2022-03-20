@@ -1,0 +1,25 @@
+/* base */
+@import "base/normalize";
+@import "base/variables";
+@import "base/mixins";
+@import "base/globals";
+@import "base/buttons";
+
+/* layout */
+@import "layout/masterpage";
+@import "layout/index";
+@import "layout/forms";
+
+/* pages */
+@import "pages/blog";
+@import "pages/nosotros";
+@import "pages/propiedades";
+
+@import "pages/admin/admin";
+@import "pages/admin/index";
+
+/* dark-mode */
+@import "layout/dark-mode";
+
+/* demo */
+@import 'demo';

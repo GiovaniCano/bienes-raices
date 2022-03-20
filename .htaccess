@@ -1,0 +1,22 @@
+php_value display_errors Off
+php_value mbstring.http_input auto
+php_value date.timezone America/Mexico_City
+RewriteEngine on
+DirectoryIndex public/
+DirectoryIndex index.php
+#RewriteCond %{REQUEST_URI} !^/public
+#RewriteRule ^(.*)$ public/$1
+#[L,R=301]
+#Options +FollowSymlinks
+RewriteCond %{REQUEST_FILENAME} !-f
+RewriteCond %{REQUEST_FILENAME} !-d
+RewriteRule ^(.*)$ public/index.php/$1
+#-- Pages with params | friendly urls
+RewriteRule ^public/index.php/propiedades/propiedad/([0-9]+)$ public/index.php/propiedades/propiedad?id=$1
+RewriteRule ^public/index.php/blog/entrada/([0-9]+)$ public/index.php/blog/entrada?id=$1
+RewriteRule ^public/index.php/admin/propiedades/actualizar/([0-9]+)$ public/index.php/admin/propiedades/actualizar?id=$1
+RewriteRule ^public/index.php/admin/vendedores/actualizar/([0-9]+)$ public/index.php/admin/vendedores/actualizar?id=$1
+RewriteRule ^public/index.php/admin/blog/actualizar/([0-9]+)$ public/index.php/admin/blog/actualizar?id=$1
+RewriteRule ^public/index.php/admin/propiedades/([0-9]+)$ public/index.php/admin/propiedades?r=$1
+RewriteRule ^public/index.php/admin/vendedores/([0-9]+)$ public/index.php/admin/vendedores?r=$1
+RewriteRule ^public/index.php/admin/blog/([0-9]+)$ public/index.php/admin/blog?r=$1

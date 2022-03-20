@@ -1,0 +1,21 @@
+{
+    "name": "giovani/bienes_raices",
+    "type": "project",
+    "authors": [
+        {
+            "name": "GiovaniCano",
+            "email": "giovanicnvg@gmail.com"
+        }
+    ],
+    "require": {
+        "intervention/image": "^2.6",
+        "phpmailer/phpmailer": "^6.5"
+    },
+    "autoload": {
+        "psr-4": {
+            "Controller\\" : "./controllers",
+            "Router\\" : "./",
+            "Model\\" : "./models"
+        }
+    }
+}

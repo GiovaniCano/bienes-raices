@@ -1,0 +1,110 @@
+.buttons-top-admin {
+    display: flex;
+    flex-direction: column;
+    @include phone {
+        flex-direction: row;
+    }
+    .button {
+        &:first-of-type {
+            margin-right: 1%;
+        }
+        @include phone {
+            width: 100%;
+            white-space: nowrap;
+        }
+        @include tablet {
+            display: inline-block;
+            width: revert;
+            &:first-of-type {
+                margin-right: 2rem;
+            }
+        }
+    }
+}
+
+.alerta {
+    padding: .5rem;
+    text-align: center;
+    color: white;
+    font-weight: $bold;
+    text-transform: uppercase;
+    margin: 1rem 0;
+    border-radius: .5rem;
+
+    &.error {
+        background-color: $red;
+    }
+    &.exito {
+        background-color: $green;
+    }
+}
+
+table.table-admin {
+    margin-top: 2rem;
+    width: 100%;
+    border-spacing: 0;
+
+    thead {
+        background-color: $green;
+
+        th {
+            color: white;
+            padding: 2rem;
+            border: 1px solid $greyLight;
+        }
+    }
+    td {
+        text-align: center;
+        padding: 0;
+        border: 1px solid $greyLight;
+    }
+    p {
+        margin: .5rem;
+    }
+
+    .image-table {
+        width: auto;
+        height: 15rem;
+        display: block;
+        margin: auto auto;
+    }
+
+    /* responsive */
+    th:not(.table-mobile), td:not(.table-mobile) {
+        display: none;
+    }
+    .table-mobile-head {
+        img {
+            margin-bottom: 1rem;
+        }
+    }
+    .table-mobile-buttons {
+        .button {
+            margin: .5rem;
+            max-width: 95%;
+            padding: 1.4rem;
+        }
+    }
+    @include phone {
+        .table-mobile-head {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            align-items: center;
+            div {
+                border-left: 1px solid $greyLight;
+            }
+        }
+        .table-mobile-buttons {
+            display: flex;
+            justify-content: space-evenly;
+        }
+    }
+    @include tablet {
+        th:not(.table-mobile), td:not(.table-mobile) {
+            display: table-cell;
+        }
+        .table-mobile {
+            display: none;
+        }
+    }
+}

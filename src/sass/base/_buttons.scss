@@ -1,0 +1,40 @@
+.button {
+    cursor: pointer;
+    border: none;
+    background-color: hotpink;
+    padding: 1.5rem 3rem;
+    color: white;
+    font-weight: $bold;
+    font-size: 2rem;
+    text-align: center;
+    display: inline-block;
+    margin: 1.5rem 0;
+    width: 100%;
+    @include phone {
+        min-width: 20rem;
+        width: revert;
+    }
+}
+.button-100w  {
+    display: block;
+    width: 100%;
+}
+
+.button-orange {
+    background-color: $orange;
+    &:hover {
+        background-color: darken($color: $orange, $amount: 5);
+    }
+}
+.button-green {
+    background-color: $green;
+    &:hover {
+        background-color: darken($color: $green, $amount: 5);
+    }
+}
+.button-red {
+    background-color: $red;
+    &:hover {
+        background-color: darken($color: $red, $amount: 5);
+    }
+}
