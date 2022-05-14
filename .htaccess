@@ -1,16 +1,32 @@
-php_value display_errors Off
-php_value mbstring.http_input auto
-php_value date.timezone America/Mexico_City
+DirectoryIndex public/index.php
+
 RewriteEngine on
-DirectoryIndex public/
-DirectoryIndex index.php
-#RewriteCond %{REQUEST_URI} !^/public
-#RewriteRule ^(.*)$ public/$1
-#[L,R=301]
-#Options +FollowSymlinks
+
 RewriteCond %{REQUEST_FILENAME} !-f
 RewriteCond %{REQUEST_FILENAME} !-d
 RewriteRule ^(.*)$ public/index.php/$1
+
+# protect (only public/ should be reachable)
+RedirectMatch (?i)^/classes/ /404
+RedirectMatch (?i)^/controllers/ /404
+RedirectMatch (?i)^/includes/ /404
+RedirectMatch (?i)^/models/ /404
+RedirectMatch (?i)^/vendor/ /404
+RedirectMatch (?i)^/views/ /404
+RedirectMatch (?i)^/Router.php /404
+
+# these shouldn't be in production
+RedirectMatch (?i)^/src/ /404
+RedirectMatch (?i)^/sql/ /404
+RedirectMatch (?i)^/\.htaccess /404
+RedirectMatch (?i)^/\.gitignore /404
+RedirectMatch (?i)^/gulpfile.js /404
+RedirectMatch (?i)^/README.md /404
+RedirectMatch (?i)^/composer.json /404
+RedirectMatch (?i)^/composer.lock /404
+RedirectMatch (?i)^/package.json /404
+RedirectMatch (?i)^/package-lock.json /404
+
 #-- Pages with params | friendly urls
 RewriteRule ^public/index.php/propiedades/propiedad/([0-9]+)$ public/index.php/propiedades/propiedad?id=$1
 RewriteRule ^public/index.php/blog/entrada/([0-9]+)$ public/index.php/blog/entrada?id=$1
